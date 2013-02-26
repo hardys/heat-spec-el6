@@ -1,7 +1,7 @@
 Name: heat
 Summary: This software provides AWS CloudFormation functionality for OpenStack
 Version: 7
-Release: 3git25022013%{?dist}
+Release: 3git26022013%{?dist}
 License: ASL 2.0
 Group: System Environment/Base
 URL: http://heat-api.org
@@ -11,7 +11,8 @@ Source2: openstack-heat-api
 Source3: openstack-heat-api-cfn
 Source4: openstack-heat-cloudwatch
 Source5: openstack-heat-engine
-#Source6: openstack-heat-metadata
+
+Patch0: el6.patch
 
 BuildArch: noarch
 BuildRequires: python2-devel
@@ -43,6 +44,7 @@ Requires(pre): shadow-utils
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 export OSLO_PACKAGE_VERSION=%{version}
@@ -139,6 +141,10 @@ if [ "$1" -ge "1" ] ; then
 fi
 
 %changelog
+* Mon Feb 26 2013 Robert van Leeuwen <robert.vanleeuwen@spilgames.com> 7-3git26022013
+- New master branch import
+- Added patch to fix module versions
+
 * Mon Feb 25 2013 Robert van Leeuwen <robert.vanleeuwen@spilgames.com> 7-3git25022013
 - Switched to using master branch
 - Removed patch for Rabbit Support, patch is merged with main.

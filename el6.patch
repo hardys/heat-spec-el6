@@ -1,8 +1,8 @@
 diff --git a/heat/engine/__init__.py b/heat/engine/__init__.py
-index 024c1d7..fbc92f7 100644
+index 024c1d7..2fb31c3 100644
 --- a/heat/engine/__init__.py
 +++ b/heat/engine/__init__.py
-@@ -12,6 +12,30 @@
+@@ -12,6 +12,28 @@
  #    License for the specific language governing permissions and limitations
  #    under the License.
  
@@ -27,8 +27,6 @@ index 024c1d7..fbc92f7 100644
 +
 +replace_dist("SQLAlchemy >= 0.6.3")
 +replace_dist("Routes >= 1.12.3")
-+
-+replace_dist("PasteDeploy >= 1.5.0")
 +
  from heat.common import config
  

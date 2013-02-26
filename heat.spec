@@ -11,7 +11,7 @@ Source2: openstack-heat-api
 Source3: openstack-heat-api-cfn
 Source4: openstack-heat-cloudwatch
 Source5: openstack-heat-engine
-Source6: openstack-heat-metadata
+#Source6: openstack-heat-metadata
 
 BuildArch: noarch
 BuildRequires: python2-devel

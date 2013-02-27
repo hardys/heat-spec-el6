@@ -32,12 +32,14 @@ Requires: python-migrate
 Requires: python-novaclient
 Requires: python-paste
 Requires: python-qpid
-Requires: python-routes
 Requires: pysendfile
-Requires: python-sqlalchemy
 Requires: python-webob
 Requires: m2crypto
-Requires: python-paste-deploy
+
+Requires: python-paste-deploy1.5
+Requires: python-routes1.12
+Requires: python-sqlalchemy0.7
+
 Requires: python-oslo-config
 Requires: python-anyjson
 
@@ -145,6 +147,7 @@ fi
 %changelog
 * Mon Feb 26 2013 Robert van Leeuwen <robert.vanleeuwen@spilgames.com> 7-3git26022013
 - Re-added updated crypto patch
+- Added required versions of packages
 
 * Mon Feb 26 2013 Robert van Leeuwen <robert.vanleeuwen@spilgames.com> 7-3git26022013
 - New master branch import

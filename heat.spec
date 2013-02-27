@@ -12,7 +12,8 @@ Source3: openstack-heat-api-cfn
 Source4: openstack-heat-cloudwatch
 Source5: openstack-heat-engine
 
-Patch0: el6.patch
+Patch0: switch-to-using-m2crypto.patch
+Patch1: el6.patch
 
 BuildArch: noarch
 BuildRequires: python2-devel
@@ -45,6 +46,7 @@ Requires(pre): shadow-utils
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 export OSLO_PACKAGE_VERSION=%{version}
@@ -141,6 +143,9 @@ if [ "$1" -ge "1" ] ; then
 fi
 
 %changelog
+* Mon Feb 26 2013 Robert van Leeuwen <robert.vanleeuwen@spilgames.com> 7-3git26022013
+- Re-added updated crypto patch
+
 * Mon Feb 26 2013 Robert van Leeuwen <robert.vanleeuwen@spilgames.com> 7-3git26022013
 - New master branch import
 - Added patch to fix module versions
